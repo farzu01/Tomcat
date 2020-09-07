@@ -5,7 +5,7 @@
      Install java
      sudo apt update
      sudo apt install openjdk-8-jdk-headless
-	   sudo apt install openjdk-8-jre-headless
+     sudo apt install openjdk-8-jre-headless
      java -version
  ```
 	
@@ -42,10 +42,35 @@ Once Java installtion Completed
      ln -s /opt/apache-tomcat-8.5.49/bin/shutdown.sh /usr/local/bin/tomcatdown
 ```
 
+Tomcat Port Selection
 ```sh
+     cd apache-tomcat-8.5.49/conf/
+     vi server.xm (in this file change the port if you want other wise its working on 8080 port)
+                  (in this file we have connector port section in that section you can change)
+``` 
 
+In this step set the permissions.
+```sh
+     find / -name context.xml
+     vi /opt/apache-tomcat-8.5.49/webapps/host-manager/META-INF/context.xml (comment the value section)
+     vi /opt/apache-tomcat-8.5.49/webapps/manager/META-INF/context.xml (comment the value section)
 ```
 
+In this step set the users
 ```sh
- 
-``` 
+     <role rolename="manager-gui"/>
+     <role rolename="manager-script"/>
+     <role rolename="manager-jmx"/> 
+     <role rolename="manager-status"/>
+     <user username="tomcat" password="tomcat" roles="manager-gui, manager-script"/>
+```
+Now start the Tomcat using bewlow commands.
+
+```sh
+   tomcatup
+   or
+   go to the `/opt/apache-tomcat-8.5.49/bin`
+   run startup.sh file
+```
+
+
