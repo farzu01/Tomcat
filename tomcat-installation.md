@@ -33,8 +33,9 @@ Once Java installtion Completed
      cd apache-tomcat-8.5.49
      
      Change permissions to start and stop files.
-     chmod x startup.sh
-     chmod x shutdown.sh
+     cd /opt/apache-tomcat-*/bin
+     chmod +x startup.sh
+     chmod +x shutdown.sh
      
      #Below command use for link files
      ln -s /opt/apache-tomcat-8.5.49/bin/startup.sh /usr/local/bin/tomcatup
