@@ -12,7 +12,6 @@
 Set Up JAVA HOME Path
 ```sh
      JAVA_HOME=/usr/lib/jvm/java-*
-     M2=$M2_HOME/bin
      PAHT=<Existing_PATH>:$JAVA_HOME
   
      Open ~/.bash_profile 
