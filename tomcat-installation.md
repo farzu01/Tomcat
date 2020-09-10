@@ -12,7 +12,7 @@
 Set Up JAVA HOME Path
 ```sh
      JAVA_HOME=/usr/lib/jvm/java-*
-     PAHT=<Existing_PATH>:$JAVA_HOME
+     PAHT=$PATH:$JAVA_HOME
   
      Open ~/.bash_profile 
      add above lines in '.bash.profile'
@@ -26,25 +26,21 @@ Once Java installtion Completed
      http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.49/bin/apache-tomcat-8.5.49.tar.gz (Download tomcat packges from 'https://tomcat.apache.org/download-90.cgi')
      
      once download untar it.
-     `tar -zvxf apache-tomcat-8.5.49`
+     `tar -zvxf apache-tomcat-*`
      
      After that move in to some folder.
-     mv apache-tomcat-8.5.49 /opt
-     cd apache-tomcat-8.5.49
+     mv apache-tomcat-*/* /opt/tomcat
+     cd tomcat
      
      Change permissions to start and stop files.
-     cd /opt/apache-tomcat-*/bin
+     cd /opt/tomcat/bin
      chmod +x startup.sh
      chmod +x shutdown.sh
-     
-     #Below command use for link files
-     ln -s /opt/apache-tomcat-8.5.49/bin/startup.sh /usr/local/bin/tomcatup
-     ln -s /opt/apache-tomcat-8.5.49/bin/shutdown.sh /usr/local/bin/tomcatdown
 ```
 
 Tomcat Port Selection
 ```sh
-     cd apache-tomcat-8.5.49/conf/
+     cd tomcat/conf/
      vi server.xm (in this file change the port if you want other wise its working on 8080 port)
                   (in this file we have connector port section in that section you can change)
 ``` 
@@ -52,8 +48,8 @@ Tomcat Port Selection
 In this step set the permissions.
 ```sh
      find / -name context.xml
-     vi /opt/apache-tomcat-8.5.49/webapps/host-manager/META-INF/context.xml (comment the value section)
-     vi /opt/apache-tomcat-8.5.49/webapps/manager/META-INF/context.xml (comment the value section)
+     vi /opt/tomcat/webapps/host-manager/META-INF/context.xml (comment the value section)
+     vi /opt/tomcat/webapps/manager/META-INF/context.xml (comment the value section)
 ```
 
 In this step set the users
@@ -67,9 +63,7 @@ In this step set the users
 Now start the Tomcat using bewlow commands.
 
 ```sh
-   tomcatup
-   or
-   go to the `/opt/apache-tomcat-8.5.49/bin`
+   go to the `/opt/tomcat/bin`
    run startup.sh file
 ```
 
