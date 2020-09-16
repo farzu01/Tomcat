@@ -58,7 +58,7 @@ In this step set the users
      <role rolename="manager-script"/>
      <role rolename="manager-jmx"/> 
      <role rolename="manager-status"/>
-     <user username="tomcat" password="tomcat" roles="manager-gui, manager-script"/>
+     <user username="tomcat" password="tomcat" roles="manager-gui, manager-script, manager-jmx, manager-status"/>
 ```
 Now start the Tomcat using bewlow commands.
 
