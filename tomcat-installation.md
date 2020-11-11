@@ -12,7 +12,7 @@
 Set Up JAVA HOME Path
 ```sh
      JAVA_HOME=/usr/lib/jvm/java-*
-     PAHT=$PATH:$JAVA_HOME
+     PATH=$PATH:$JAVA_HOME
   
      Open ~/.bash_profile 
      add above lines in '.bash.profile'
